@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axiosInstance from '../api/axiosInstance';
+import { useNavigate, Link } from 'react-router-dom';
 
 const MyReservationsPage = () => {
     const [reservations, setReservations] = useState([]);
+    const navigate = useNavigate();
 
     const fetchReservations = useCallback(async () => {
         try {
@@ -21,7 +23,6 @@ const MyReservationsPage = () => {
         if (window.confirm('この予約をキャンセルしますか？')) {
             try {
                 await axiosInstance.delete(`/reservations/${reservationId}/`);
-                // キャンセル成功後、予約一覧を再読み込み
                 fetchReservations();
             } catch (error) {
                 console.error("予約のキャンセルに失敗しました", error);
@@ -42,12 +43,20 @@ const MyReservationsPage = () => {
                                 <p className="text-gray-600 mt-2">日時: {res.reservation_date} {res.reservation_time.slice(0, 5)}</p>
                                 <p className="text-gray-600">人数: {res.number_of_people} 名</p>
                             </div>
-                            <button 
-                                onClick={() => handleCancel(res.id)}
-                                className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
-                            >
-                                キャンセル
-                            </button>
+                            <div className="flex space-x-2">
+                                <button 
+                                    onClick={() => handleCancel(res.id)}
+                                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+                                >
+                                    キャンセル
+                                </button>
+                                <button
+                                    onClick={() => navigate(`/restaurants/${res.restaurant}`)}
+                                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+                                >
+                                    詳細
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>

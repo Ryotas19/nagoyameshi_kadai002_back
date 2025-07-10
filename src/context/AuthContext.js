@@ -1,4 +1,3 @@
-
 import React, { createContext, useState } from 'react';
 import axiosInstance from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    // ローカルストレージからトークンとユーザー情報を取得して初期化
     const [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     const [user, setUser] = useState(() => localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null);
     const navigate = useNavigate();
@@ -31,12 +29,13 @@ export const AuthProvider = ({ children }) => {
         setAuthTokens(null);
         setUser(null);
         localStorage.removeItem('authTokens');
-        localStorage.removeItem('user'); // ユーザー情報も削除
+        localStorage.removeItem('user');
         navigate('/login');
     };
 
     const contextData = {
         user,
+        setUser,
         authTokens,
         loginUser,
         logoutUser,
