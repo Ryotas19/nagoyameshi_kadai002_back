@@ -1,0 +1,9 @@
+asgiref
+Django
+django-environ
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+dj-database-url
+pytz
+sqlparse
