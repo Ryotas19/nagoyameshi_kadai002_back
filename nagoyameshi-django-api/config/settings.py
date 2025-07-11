@@ -121,3 +121,5 @@ STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 
 # フロントエンド側 URL
 FRONTEND_URL          = env('FRONTEND_URL')
+
+# Heroku再ビルド
