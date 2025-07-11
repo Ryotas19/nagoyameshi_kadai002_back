@@ -79,7 +79,7 @@ TIME_ZONE = "Asia/Tokyo"
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
@@ -122,4 +122,5 @@ STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 # フロントエンド側 URL
 FRONTEND_URL          = env('FRONTEND_URL')
 
-# Heroku再ビルド
+# Heroku静的ファイル対応
+STATIC_ROOT = BASE_DIR / 'static'
