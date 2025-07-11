@@ -7,3 +7,11 @@ django-cors-headers
 dj-database-url
 pytz
 sqlparse
+django-allauth
+dj-rest-auth
+django-filter
+mysqlclient
+stripe
+Pillow
+gunicorn
+whitenoise
