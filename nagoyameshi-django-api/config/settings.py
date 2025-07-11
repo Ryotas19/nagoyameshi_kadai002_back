@@ -83,6 +83,10 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
+# Heroku静的ファイル対応
+STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL     = 'accounts.CustomUser'
 
@@ -122,5 +126,3 @@ STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 # フロントエンド側 URL
 FRONTEND_URL          = env('FRONTEND_URL')
 
-# Heroku静的ファイル対応
-STATIC_ROOT = BASE_DIR / 'static'
