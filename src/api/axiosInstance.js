@@ -1,7 +1,6 @@
-
 import axios from 'axios';
 
-const baseURL = 'http://127.0.0.1:8000/api';
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000/api';
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
@@ -13,10 +12,8 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use(config => {
-    // ローカルストレージからトークン情報を取得
     const authTokens = localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null;
     
-    // トークンがあれば、リクエストヘッダーにセットする
     if (authTokens) {
         config.headers.Authorization = `Bearer ${authTokens.access}`;
     }
