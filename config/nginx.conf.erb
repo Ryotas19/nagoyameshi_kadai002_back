@@ -8,11 +8,14 @@ http {
   include       mime.types;
   default_type  application/octet-stream;
   sendfile        on;
+  keepalive_timeout  65;
 
   server {
     listen <%= ENV["PORT"] %>;
+    server_name localhost;
+
     root <%= ENV["HOME"] %>/build;
-    index index.html index.htm;
+    index index.html;
 
     location / {
       try_files $uri /index.html;
