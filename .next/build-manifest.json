@@ -1,0 +1,142 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-42372ed130431b0a.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/pC5wwF-4JHLf2Pd_CVNOD/_buildManifest.js",
+    "static/pC5wwF-4JHLf2Pd_CVNOD/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "rootMainFilesTree": {},
+  "pages": {
+    "/EmailVerifiedPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/pages/EmailVerifiedPage-ffbe2ccbcb0594d6.js"
+    ],
+    "/FavoritesPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/FavoritesPage-c64f3ca0ea856de8.js"
+    ],
+    "/HomePage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/HomePage-37a462de6d785700.js"
+    ],
+    "/LoginPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/LoginPage-0e4fb10bb6e976c9.js"
+    ],
+    "/MyPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/MyPage-f7854d199accc1d6.js"
+    ],
+    "/MyReservationsPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/MyReservationsPage-1c3725fa96f0e851.js"
+    ],
+    "/PasswordResetConfirmPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/PasswordResetConfirmPage-06e9f4b6edc2184e.js"
+    ],
+    "/PasswordResetRequestPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/PasswordResetRequestPage-53b10a29b9527157.js"
+    ],
+    "/PaymentCancelledPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/pages/PaymentCancelledPage-01302f6799d262dd.js"
+    ],
+    "/PaymentSuccessPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/PaymentSuccessPage-30e31fa17c598761.js"
+    ],
+    "/RestaurantDetailPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/RestaurantDetailPage-e226daf4b33e70b4.js"
+    ],
+    "/SignupPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/SignupPage-8088c3aafb1270a5.js"
+    ],
+    "/UpgradePage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/UpgradePage-2ecc2006794d6365.js"
+    ],
+    "/UpgradeSuccessPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/40-89a5e8f6067b8219.js",
+      "static/chunks/pages/UpgradeSuccessPage-fcd0f949ed3e255f.js"
+    ],
+    "/VerificationSentPage": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/framework-00d3bdcbd3aea188.js",
+      "static/chunks/cd3cabb5-1e6c6d74e9b97c9f.js",
+      "static/chunks/pages/VerificationSentPage-1041a53a4637d4af.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/pages/_app-a507ba35fc13901c.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-8cac0b4b405cede1.js",
+      "static/chunks/main-1a1ed192ad1666a0.js",
+      "static/chunks/pages/_error-4951e98ef0e62728.js"
+    ]
+  },
+  "ampFirstPages": []
+}
