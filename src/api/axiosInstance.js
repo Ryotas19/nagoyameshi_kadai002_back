@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000/api';
+const baseURL = 'https://nagoyameshi1234.herokuapp.com/api';
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
