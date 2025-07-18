@@ -3,7 +3,8 @@
 from pathlib import Path
 from datetime import timedelta
 import os
-import environ  # ← 追加
+import environ 
+import dj_database_url
 
 # ── プロジェクトのルートパス
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -66,7 +67,11 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
-    "default": env.db(),  # DATABASE_URL を参照
+    'default': dj_database_url.config(
+        default=env('DATABASE_URL'),  
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [

@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/ryota/Desktop/0705nagoyameshi-appのコピー(ほぼ関西)/nagoyameshi-django-api/venv"
+set -gx VIRTUAL_ENV "/Users/ryota/Desktop/nagoyameshi-app(完成版)いじるな！のコピー2/nagoyameshi-django-api/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

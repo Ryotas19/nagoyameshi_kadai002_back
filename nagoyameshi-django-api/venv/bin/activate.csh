@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/ryota/Desktop/0705nagoyameshi-appのコピー(ほぼ関西)/nagoyameshi-django-api/venv"
+setenv VIRTUAL_ENV "/Users/ryota/Desktop/nagoyameshi-app(完成版)いじるな！のコピー2/nagoyameshi-django-api/venv"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

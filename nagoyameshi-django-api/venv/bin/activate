@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/ryota/Desktop/0705nagoyameshi-appのコピー(ほぼ関西)/nagoyameshi-django-api/venv"
+VIRTUAL_ENV="/Users/ryota/Desktop/nagoyameshi-app(完成版)いじるな！のコピー2/nagoyameshi-django-api/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
