@@ -2,9 +2,7 @@
 
 import React from 'react';
 import axiosInstance from '../api/axiosInstance'; 
-// axiosInstance にはあらかじめ
-// baseURL: 'http://127.0.0.1:8000/api'
-// が設定されているものとします
+
 
 const UpgradePage = () => {
   const handleUpgrade = async () => {

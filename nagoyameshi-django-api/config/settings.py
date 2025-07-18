@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'rest_framework','corsheaders','allauth','allauth.account',
     'allauth.socialaccount','dj_rest_auth','dj_rest_auth.registration',
-    'django_filters','accounts','api',
+    'django_filters','accounts','api','corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -125,9 +125,10 @@ REST_AUTH = {
 EMAIL_BACKEND         = 'django.core.mail.backends.console.EmailBackend'
 
 # 本番URLを許可（Herokuのフロントエンド）
-CORS_ALLOWED_ORIGINS = [
-    "https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = [
+#     "https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com",
+# ]
 
 # Stripe
 STRIPE_SECRET_KEY     = env('STRIPE_SECRET_KEY')
