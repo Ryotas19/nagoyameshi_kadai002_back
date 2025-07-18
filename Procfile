@@ -1,1 +1,1 @@
-web: gunicorn nagoyameshi.wsgi
+web: serve -s build
