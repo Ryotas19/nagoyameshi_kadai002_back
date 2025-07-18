@@ -137,3 +137,8 @@ STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 # フロントエンド側 URL
 FRONTEND_URL          = env('FRONTEND_URL')
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'
