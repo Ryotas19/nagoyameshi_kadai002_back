@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://nagoyameshi1234.herokuapp.com/api';
+const baseURL = process.env.REACT_APP_API_URL;
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(config => {
     const authTokens = localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null;
-    
+
     if (authTokens) {
         config.headers.Authorization = `Bearer ${authTokens.access}`;
     }
