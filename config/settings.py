@@ -1,9 +1,8 @@
-# settings.py
-
 from pathlib import Path
 from datetime import timedelta
 import os
-import environ  # ← 追加
+import environ
+import dj_database_url
 
 # ── プロジェクトのルートパス
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -66,7 +65,11 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
-    "default": env.db(),  # DATABASE_URL を参照
+    'default': dj_database_url.config(
+        default=env('DATABASE_URL'),  
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -110,6 +113,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED     = True
 ACCOUNT_EMAIL_REQUIRED        = True
 ACCOUNT_EMAIL_VERIFICATION    = 'none'
+
 REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
     'TOKEN_MODEL': None,
@@ -120,7 +124,6 @@ REST_AUTH_USER_DETAILS_SERIALIZER = 'accounts.serializers.CustomUserDetailsSeria
 
 EMAIL_BACKEND         = 'django.core.mail.backends.console.EmailBackend'
 
-# 本番URLを許可（Herokuのフロントエンド）
 CORS_ALLOWED_ORIGINS = [
     "https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com",
 ]
@@ -132,3 +135,11 @@ STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 # フロントエンド側 URL
 FRONTEND_URL          = env('FRONTEND_URL')
 
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'
+
+# HerokuのHTTPS対応
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

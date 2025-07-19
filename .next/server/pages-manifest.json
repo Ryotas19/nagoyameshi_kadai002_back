@@ -1,0 +1,20 @@
+{
+  "/EmailVerifiedPage": "pages/EmailVerifiedPage.js",
+  "/FavoritesPage": "pages/FavoritesPage.js",
+  "/HomePage": "pages/HomePage.js",
+  "/LoginPage": "pages/LoginPage.js",
+  "/MyPage": "pages/MyPage.js",
+  "/MyReservationsPage": "pages/MyReservationsPage.js",
+  "/PasswordResetConfirmPage": "pages/PasswordResetConfirmPage.js",
+  "/PasswordResetRequestPage": "pages/PasswordResetRequestPage.js",
+  "/PaymentCancelledPage": "pages/PaymentCancelledPage.js",
+  "/PaymentSuccessPage": "pages/PaymentSuccessPage.js",
+  "/RestaurantDetailPage": "pages/RestaurantDetailPage.js",
+  "/UpgradePage": "pages/UpgradePage.js",
+  "/UpgradeSuccessPage": "pages/UpgradeSuccessPage.js",
+  "/VerificationSentPage": "pages/VerificationSentPage.js",
+  "/SignupPage": "pages/SignupPage.js",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js"
+}
