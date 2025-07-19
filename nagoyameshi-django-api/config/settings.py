@@ -124,11 +124,10 @@ REST_AUTH = {
 
 EMAIL_BACKEND         = 'django.core.mail.backends.console.EmailBackend'
 
-# 本番URLを許可（Herokuのフロントエンド）
-CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOWED_ORIGINS = [
-#     "https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com",
-# ]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com",
+]
 
 # Stripe
 STRIPE_SECRET_KEY     = env('STRIPE_SECRET_KEY')
