@@ -1,16 +1,11 @@
-from dj_rest_auth.registration.serializers import RegisterSerializer, UserDetailsSerializer
+from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
-from .models import CustomUser
+from django.contrib.auth import get_user_model
 
-class CustomRegisterSerializer(RegisterSerializer):
-    # 新規登録時の追加フィールド（不要なら何も足さなくてOK）
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._has_phone_field = False  # これ必須！！
+User = get_user_model()
 
-class CustomUserDetailsSerializer(UserDetailsSerializer):
-    plan = serializers.CharField(read_only=True)
+class CustomUserDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email')  # 必要に応じて追加
 
-    class Meta(UserDetailsSerializer.Meta):
-        model = CustomUser
-        fields = UserDetailsSerializer.Meta.fields + ('plan',)
