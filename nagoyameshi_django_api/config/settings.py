@@ -18,7 +18,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # ── 環境変数から取得
 SECRET_KEY            = env('SECRET_KEY')
 DEBUG                 = env('DEBUG')
-ALLOWED_HOSTS         =env.list(' ALLOWED_HOSTS')
+ALLOWED_HOSTS         =env.list('ALLOWED_HOSTS')
 
 INSTALLED_APPS = [
     'django.contrib.admin','django.contrib.auth','django.contrib.contenttypes',
