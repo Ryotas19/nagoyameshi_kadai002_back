@@ -1,1 +1,1 @@
-web: cd nagoyameshi-django-api && gunicorn nagoyameshi.wsgi --log-file -
+web: cd nagoyameshi-django-api && gunicorn nagoyameshi.wsgi:application --log-file -
