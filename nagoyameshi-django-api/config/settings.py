@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'rest_framework','corsheaders','allauth','allauth.account',
     'allauth.socialaccount','dj_rest_auth','dj_rest_auth.registration',
-    'django_filters','accounts','api','corsheaders',
+    'django_filters','accounts','api',
 ]
 
 MIDDLEWARE = [
