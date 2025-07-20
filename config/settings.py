@@ -114,9 +114,9 @@ ACCOUNT_USERNAME_REQUIRED     = True
 ACCOUNT_EMAIL_REQUIRED        = True
 ACCOUNT_EMAIL_VERIFICATION    = 'none'
 
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
-}
+# REST_AUTH_REGISTER_SERIALIZERS = {
+#     'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+# }
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
 }
