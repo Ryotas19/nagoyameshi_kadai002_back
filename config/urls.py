@@ -20,7 +20,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/create-portal-session/', CreatePortalSessionView.as_view(), name='create-portal-session'),
     path('api/create-checkout-session/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
-    path("api/stripe-webhook/", StripeWebhookView.as_view(), name="stripe-webhook"),
+    path("api/stripe/webhook/", StripeWebhookView.as_view(), name="stripe-webhook"),
     path('api/confirm-subscription/', ConfirmSubscriptionView.as_view(), name='confirm-subscription'),
 
 ]
