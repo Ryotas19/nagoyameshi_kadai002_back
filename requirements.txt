@@ -1,6 +1,6 @@
 Django==4.2.23
 djangorestframework==3.16.0
-dj-rest-auth==5.0.1
+dj-rest-auth==4.0.1
 django-allauth==0.54.0
 django-cors-headers==4.7.0
 django-environ==0.12.0
