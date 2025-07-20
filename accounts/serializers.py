@@ -4,8 +4,13 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+class CustomRegisterSerializer(RegisterSerializer):
+    # 追加フィールドなければpassでOK
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
 class CustomUserDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email')  # 必要に応じて追加
-
+        fields = ('id', 'username', 'email')

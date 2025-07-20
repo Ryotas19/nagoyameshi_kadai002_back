@@ -114,13 +114,18 @@ ACCOUNT_USERNAME_REQUIRED     = True
 ACCOUNT_EMAIL_REQUIRED        = True
 ACCOUNT_EMAIL_VERIFICATION    = 'none'
 
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+}
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
+}
 REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
     'TOKEN_MODEL': None,
     'USE_JWT': True,
     'JWT_AUTH_HTTPONLY': False,
 }
-REST_AUTH_USER_DETAILS_SERIALIZER = 'accounts.serializers.CustomUserDetailsSerializer'
 
 EMAIL_BACKEND         = 'django.core.mail.backends.console.EmailBackend'
 
