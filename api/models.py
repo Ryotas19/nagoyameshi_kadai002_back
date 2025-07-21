@@ -32,7 +32,7 @@ class Restaurant(models.Model):
         return self.name
 
     @property
-    def avg_rating(self):
+    def avg_rating_value(self):
         reviews = self.reviews.all()
         if reviews.exists():
             return reviews.aggregate(Avg('rating'))['rating__avg']
