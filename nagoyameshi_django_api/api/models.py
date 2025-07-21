@@ -26,6 +26,7 @@ class Restaurant(models.Model):
         return 0
 
 class Review(models.Model):
+    price_min = models.IntegerField(verbose_name="価格帯下限", null=True, blank=True)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='reviews', verbose_name="店舗")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="ユーザー")
     rating = models.IntegerField(verbose_name="評価", choices=[(i, i) for i in range(1, 6)])

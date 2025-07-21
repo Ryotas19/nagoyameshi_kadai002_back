@@ -22,6 +22,7 @@ class Restaurant(models.Model):
         ],
         default='1000-1999円'
     )
+    price_min = models.IntegerField(verbose_name="価格帯下限", null=True, blank=True)
     description = models.TextField(verbose_name="説明")
     image = models.ImageField(upload_to='restaurants/', verbose_name="店舗画像", null=True, blank=True)
     address = models.CharField(max_length=255, verbose_name="住所")
