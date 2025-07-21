@@ -1,4 +1,5 @@
 # api/views.py
+from django.db.models import Avg
 
 from rest_framework import viewsets, filters, status
 from rest_framework.decorators import action
