@@ -10,7 +10,9 @@ class CustomAccountAdapter(DefaultAccountAdapter):
             "current_site": None,
             "key": emailconfirmation.key,
         }
-        self.send_mail('account/email/email_confirmation_subject.txt', 
-                       'account/email/email_confirmation_message.txt',
-                       emailconfirmation.email_address.email, 
-                       ctx)
+        # ★ ここが正しい呼び出し方（template_prefix, email, context のみ！）
+        self.send_mail(
+            'account/email/email_confirmation',
+            emailconfirmation.email_address.email,
+            ctx
+        )
