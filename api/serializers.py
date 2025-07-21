@@ -36,7 +36,7 @@ class RestaurantSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'name', 'description', 'image', 'address',
             'reviews', 'category_name', 'avg_rating',
-            'category', 'is_favorited',
+            'category', 'is_favorited', 'price_range',
         ]
 
     def get_is_favorited(self, obj):
