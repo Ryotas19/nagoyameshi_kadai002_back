@@ -36,6 +36,12 @@ class RestaurantViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_fields = ["category"]
     search_fields = ["name", "description", "address"]
     ordering_fields = ["avg_rating", "id", "price_min"]
+    
+    def get_queryset(self):
+        return Restaurant.objects.annotate(
+            avg_rating=Avg('reviews__rating')
+        )
+
 
     @action(detail=True, methods=["post"], permission_classes=[IsAuthenticated, IsPremiumUser])
     def favorite(self, request, pk=None):
