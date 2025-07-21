@@ -143,6 +143,9 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com/email-confirmed'
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com/email-confirmed'
+
 
 # --- 認証メール必須
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
