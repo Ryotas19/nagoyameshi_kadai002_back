@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser  # ← ここスペル修正！
-from api.models import Restaurant, Category, Review, Favorite, Reservation
+from .models import CustomUser  # ここだけ
 
 # --- CustomUser 管理 ---
 @admin.register(CustomUser)
@@ -23,29 +22,3 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('email', 'password', 'password2'),
         }),
     )
-
-# --- Restaurant 管理 ---
-@admin.register(Restaurant)
-class RestaurantAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price_range', 'address')
-    fields = ('name', 'description', 'price_range', 'image', 'address', 'category')
-
-# --- Category 管理 ---
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-# --- Review 管理 ---
-@admin.register(Review)
-class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('restaurant', 'user', 'rating', 'created_at')
-
-# --- Favorite 管理 ---
-@admin.register(Favorite)
-class FavoriteAdmin(admin.ModelAdmin):
-    list_display = ('user', 'restaurant', 'created_at')
-
-# --- Reservation 管理 ---
-@admin.register(Reservation)
-class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('user', 'restaurant', 'reservation_date', 'reservation_time', 'number_of_people', 'created_at')
