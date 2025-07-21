@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser, Restaurant, Category, Review, Favorite, Reservation
+from .models import CustomUse
+from api.models import Restaurant, Category, Review, Favorite, Reservation
+
 
 # --- CustomUser 管理 ---
 @admin.register(CustomUser)
