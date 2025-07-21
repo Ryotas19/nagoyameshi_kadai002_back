@@ -136,7 +136,16 @@ REST_AUTH = {
     'JWT_AUTH_HTTPONLY': False,
 }
 
-EMAIL_BACKEND         = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER)
+
+# --- 認証メール必須
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 CORS_ALLOWED_ORIGINS = [
     "https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com",
