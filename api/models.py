@@ -10,6 +10,18 @@ class Category(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=200, verbose_name="店舗名")
+    price_range = models.CharField(
+        max_length=20,
+        choices=[
+            ('~999円', '〜999円'),
+            ('1000-1999円', '1,000〜1,999円'),
+            ('2000-2999円', '2,000〜2,999円'),
+            ('3000-3999円', '3,000〜3,999円'),
+            ('4000-4999円', '4,000〜4,999円'),
+            ('5000円〜', '5,000円〜'),
+        ],
+        default='1000-1999円'
+    )
     description = models.TextField(verbose_name="説明")
     image = models.ImageField(upload_to='restaurants/', verbose_name="店舗画像", null=True, blank=True)
     address = models.CharField(max_length=255, verbose_name="住所")

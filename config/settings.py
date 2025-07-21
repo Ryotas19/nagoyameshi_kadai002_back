@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'rest_framework','corsheaders','allauth','allauth.account',
     'allauth.socialaccount','dj_rest_auth','dj_rest_auth.registration',
     'django_filters','accounts','api',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +45,14 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dxh15sxdm',
+    'API_KEY': '25776293442142',
+    'API_SECRET': 'Q5eW9e78RIXkBR1m3iMIM_gVUes',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 ROOT_URLCONF = "config.urls"
 
