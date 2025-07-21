@@ -35,7 +35,7 @@ class RestaurantViewSet(viewsets.ReadOnlyModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ["category"]
     search_fields = ["name", "description", "address"]
-    ordering_fields = ["avg_rating", "id"]
+    ordering_fields = ["avg_rating", "id", "price_min"]
 
     @action(detail=True, methods=["post"], permission_classes=[IsAuthenticated, IsPremiumUser])
     def favorite(self, request, pk=None):
