@@ -11,6 +11,11 @@ class RestaurantAdmin(admin.ModelAdmin):
     list_display = ('name', 'price_range', 'price_min', 'category')
     form = RestaurantForm
     fields = ('name', 'price_range', 'price_min', 'description', 'image', 'address', 'category')
+    search_fields = ['name', 'category__name']  
+    list_filter = ['category']  
+    
+class CategoryAdmin(admin.ModelAdmin):
+    search_fields = ['name']   
 
 admin.site.register(Restaurant, RestaurantAdmin)
 admin.site.register(Review)
