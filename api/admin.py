@@ -19,6 +19,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Restaurant, RestaurantAdmin)
 admin.site.register(Review)
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Favorite)
 admin.site.register(Reservation)
