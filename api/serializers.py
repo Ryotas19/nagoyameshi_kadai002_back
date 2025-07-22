@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Restaurant, Review, Category, Favorite, Reservation
+from datetime import date
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -53,10 +54,16 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
 class ReservationSerializer(serializers.ModelSerializer):
     restaurant_name = serializers.CharField(source='restaurant.name', read_only=True)
+
     class Meta:
         model = Reservation
         fields = [
             'id', 'restaurant', 'restaurant_name',
             'reservation_date', 'reservation_time', 'number_of_people'
         ]
-        read_only_fields = ['user']  # userは自動で設定
+        read_only_fields = ['user']  
+
+    def validate_reservation_date(self, value):
+        if value < date.today():
+            raise serializers.ValidationError("過去の日付は予約できません。")
+        return value
