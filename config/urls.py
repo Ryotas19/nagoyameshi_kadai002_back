@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from api import views
+from dj_rest_auth.registration.views import ConfirmEmailView
 from api.views import CreatePortalSessionView, CreateCheckoutSessionView, StripeWebhookView, ConfirmSubscriptionView
 
 router = DefaultRouter()
@@ -22,7 +23,7 @@ urlpatterns = [
     path('api/create-checkout-session/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
     path("api/stripe/webhook/", StripeWebhookView.as_view(), name="stripe-webhook"),
     path('api/confirm-subscription/', ConfirmSubscriptionView.as_view(), name='confirm-subscription'),
-
+    path('api/auth/account-confirm-email/', ConfirmEmailView.as_view(), name='account_confirm_email'),
 ]
 
 if settings.DEBUG:
