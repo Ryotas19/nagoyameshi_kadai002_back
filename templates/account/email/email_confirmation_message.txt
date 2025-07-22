@@ -1,2 +1,2 @@
 下記のリンクをクリックしてメールアドレスを認証してください。
-{{ activate_url }}
+https://nagoyameshi-frontend-6f2d33c9455f.herokuapp.com/confirm-email?key={{ key }}
