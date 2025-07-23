@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Restaurant, Review, Category, Favorite, Reservation
-from datetime import date
+from datetime import date, datetime, time
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -8,22 +8,16 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 class ReviewSerializer(serializers.ModelSerializer):
-    # 投稿者のIDを含めるように追加
     user = serializers.IntegerField(source='user.id', read_only=True)
     user_username = serializers.CharField(source='user.username', read_only=True)
 
     class Meta:
         model = Review
         fields = [
-            'id',
-            'user',          # ユーザーID
-            'user_username', # ユーザー名
-            'rating',
-            'comment',
-            'created_at',
-            'restaurant',
+            'id', 'user', 'user_username',
+            'rating', 'comment', 'created_at', 'restaurant',
         ]
-        read_only_fields = ['user']  # userは自動でセット
+        read_only_fields = ['user']
 
 class RestaurantSerializer(serializers.ModelSerializer):
     reviews = ReviewSerializer(many=True, read_only=True)
@@ -61,9 +55,21 @@ class ReservationSerializer(serializers.ModelSerializer):
             'id', 'restaurant', 'restaurant_name',
             'reservation_date', 'reservation_time', 'number_of_people'
         ]
-        read_only_fields = ['user']  
+        read_only_fields = ['user']
 
-    def validate_reservation_date(self, value):
-        if value < date.today():
+    def validate(self, data):
+        # 予約日・時間両方使ってバリデーション
+        res_date = data.get('reservation_date')
+        res_time = data.get('reservation_time')
+        today = date.today()
+
+        if res_date < today:
             raise serializers.ValidationError("過去の日付は予約できません。")
-        return value
+
+        
+        if res_date == today:
+            now = datetime.now().time()
+            if res_time < now:
+                raise serializers.ValidationError("本日より前の時間は予約できません。")
+
+        return data
